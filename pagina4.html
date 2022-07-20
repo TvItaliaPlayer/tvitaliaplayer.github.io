@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tv Italia Player</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="fontawesome/css/all.min.css">
+    <link rel="stylesheet" href="css/templatemo-style.css">
+    <link href="https://unpkg.com/video.js/dist/video-js.css" rel="stylesheet">
+    <script src="https://unpkg.com/video.js/dist/video.js"></script>
+    <script src="https://unpkg.com/videojs-contrib-hls/dist/videojs-contrib-hls.js"></script>
+    <script type="text/javascript">
+         document.onkeypress = function (event) {
+             event = (event || window.event);
+             return keyFunction(event);
+         }
+         document.onmousedown = function (event) {
+             event = (event || window.event);
+             return keyFunction(event);
+         }
+         document.onkeydown = function (event) {
+             event = (event || window.event);
+             return keyFunction(event);
+         }
+         //Disable right click script
+         var message="Sorry, right-click has been disabled";
+         function clickIE() {if (document.all) {(message);return false;}}
+         function clickNS(e) {if
+         (document.layers||(document.getElementById&&!document.all)) {
+         if (e.which==2||e.which==3) {(message);return false;}}}
+         if (document.layers)
+         {document.captureEvents(Event.MOUSEDOWN);document.onmousedown=clickNS;}
+         else{document.onmouseup=clickNS;document.oncontextmenu=clickIE;}
+         document.oncontextmenu=new Function("return false")
+         function keyFunction(event){
+             //"F12" key
+             if (event.keyCode == 123) {
+                 return false;
+             }
+             if (event.ctrlKey && event.shiftKey && event.keyCode == 73) {
+                 return false;
+             }
+             //"J" key
+             if (event.ctrlKey && event.shiftKey && event.keyCode == 74) {
+                 return false;
+             }
+             //"S" key
+             if (event.keyCode == 83) {
+                return false;
+             }
+             //"U" key
+             if (event.ctrlKey && event.keyCode == 85) {
+                return false;
+             }
+         <!--    //F5-->
+         <!--    if (event.keyCode == 116) {-->
+         <!--       return false;-->
+         <!--    }-->
+         }
+      </script>
+</head>
+<body>
+<!-- Page Loader -->
+<div id="loader-wrapper">
+    <div id="loader"></div>
+    <div class="loader-section section-left"></div>
+    <div class="loader-section section-right"></div>
+</div>
+<nav class="navbar navbar-expand-lg" style="background-color: #f3f3f3">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+            <img src="img/logosplash.png" style="max-width: 50%; max-height: 50%">
+        </a>
+        <a class="nav-link" style="color:#ce2b37;">Tv Italia Player</a>
+    </div>
+</nav>
+
+<div class="container-fluid tm-container-content tm-mt-60">
+    <div class="row tm-mb-90 tm-gallery italy">
+        <div class="col-xl-3 col-lg-4 col-md-2 col-sm-6 col-12 mb-5" data-bs-toggle="modal" data-bs-target="#qvc"
+             style="margin-top: 60px; !important">
+            <figure class="effect-ming tm-video-item" style="background-color: transparent;">
+                <img src="img/qvc.png" alt="Image" class="img-fluid"
+                     style="display:block; margin-left: auto; margin-right: auto; border-style: solid; border-color: #dcdcdc;">
+                <figcaption class="d-flex align-items-center justify-content-center">
+                    <h2>QVC</h2>
+                </figcaption>
+            </figure>
+            <div class="d-flex justify-content-between">
+                <span style="display:block; margin-left: auto; margin-right: auto; font-weight: bold; color:#000">QVC</span>
+            </div>
+        </div>
+        <div class="col-xl-3 col-lg-4 col-md-2 col-sm-6 col-12 mb-5" data-bs-toggle="modal"
+             data-bs-target="#Radio105TV" style="margin-top: 60px; !important">
+            <figure class="effect-ming tm-video-item" style="background-color: transparent;">
+                <img src="img/radio_cento_e_cinque.png" alt="Image" class="img-fluid"
+                     style="display:block; margin-left: auto; margin-right: auto; border-style: solid; border-color: #dcdcdc;">
+                <figcaption class="d-flex align-items-center justify-content-center">
+                    <h2>Radio105TV</h2>
+                </figcaption>
+            </figure>
+            <div class="d-flex justify-content-between">
+                <span style="display:block; margin-left: auto; margin-right: auto; font-weight: bold; color:#000">Radio105TV</span>
+            </div>
+        </div>
+        <div class="col-xl-3 col-lg-4 col-md-2 col-sm-6 col-12 mb-5" data-bs-toggle="modal"
+             data-bs-target="#rai_news" style="margin-top: 60px; !important">
+            <figure class="effect-ming tm-video-item" style="background-color: transparent;">
+                <img src="img/rai_news.png" alt="Image" class="img-fluid"
+                     style="display:block; margin-left: auto; margin-right: auto; border-style: solid; border-color: #dcdcdc;">
+                <figcaption class="d-flex align-items-center justify-content-center">
+                    <h2>Rai News</h2>
+                </figcaption>
+            </figure>
+            <div class="d-flex justify-content-between">
+                <span style="display:block; margin-left: auto; margin-right: auto; font-weight: bold; color:#000">Rai News</span>
+            </div>
+        </div>
+        <div class="col-xl-3 col-lg-4 col-md-2 col-sm-6 col-12 mb-5" data-bs-toggle="modal"
+             data-bs-target="#raitre" style="margin-top: 60px; !important">
+            <figure class="effect-ming tm-video-item" style="background-color: transparent;">
+                <img src="img/raitre.png" alt="Image" class="img-fluid"
+                     style="display:block; margin-left: auto; margin-right: auto; border-style: solid; border-color: #dcdcdc;">
+                <figcaption class="d-flex align-items-center justify-content-center">
+                    <h2>Rai 3</h2>
+                </figcaption>
+            </figure>
+            <div class="d-flex justify-content-between">
+                <span style="display:block; margin-left: auto; margin-right: auto; font-weight: bold; color:#000">Rai 3</span>
+            </div>
+        </div>
+        <div class="col-xl-3 col-lg-4 col-md-2 col-sm-6 col-12 mb-5" data-bs-toggle="modal"
+             data-bs-target="#reggiotv">
+            <figure class="effect-ming tm-video-item" style="background-color: transparent;">
+                <img src="img/reggiotv.png" alt="Image" class="img-fluid"
+                     style="display:block; margin-left: auto; margin-right: auto; border-style: solid; border-color: #dcdcdc;">
+                <figcaption class="d-flex align-items-center justify-content-center">
+                    <h2>Reggio Tv</h2>
+                </figcaption>
+            </figure>
+            <div class="d-flex justify-content-between">
+                <span style="display:block; margin-left: auto; margin-right: auto; font-weight: bold; color:#000">Reggio Tv</span>
+            </div>
+        </div>
+        <div class="col-xl-3 col-lg-4 col-md-2 col-sm-6 col-12 mb-5" data-bs-toggle="modal"
+             data-bs-target="#reitv">
+            <figure class="effect-ming tm-video-item" style="background-color: transparent;">
+                <img src="img/reitv.png" alt="Image" class="img-fluid"
+                     style="display:block; margin-left: auto; margin-right: auto; border-style: solid; border-color: #dcdcdc;">
+                <figcaption class="d-flex align-items-center justify-content-center">
+                    <h2>Rei tv</h2>
+                </figcaption>
+            </figure>
+            <div class="d-flex justify-content-between">
+                <span style="display:block; margin-left: auto; margin-right: auto; font-weight: bold; color:#000">Rei Tv</span>
+            </div>
+        </div>
+        <div class="col-xl-3 col-lg-4 col-md-2 col-sm-6 col-12 mb-5" data-bs-toggle="modal"
+             data-bs-target="#rete_oto">
+            <figure class="effect-ming tm-video-item" style="background-color: transparent;">
+                <img src="img/rete_oto.png" alt="Image" class="img-fluid"
+                     style="display:block; margin-left: auto; margin-right: auto; border-style: solid; border-color: #dcdcdc;">
+                <figcaption class="d-flex align-items-center justify-content-center">
+                    <h2>Rete 8</h2>
+                </figcaption>
+            </figure>
+            <div class="d-flex justify-content-between">
+                <span style="display:block; margin-left: auto; margin-right: auto; font-weight: bold; color:#000">Rete 8</span>
+            </div>
+        </div>
+        <div class="col-xl-3 col-lg-4 col-md-2 col-sm-6 col-12 mb-5" data-bs-toggle="modal"
+             data-bs-target="#rete_oto_sport">
+            <figure class="effect-ming tm-video-item" style="background-color: transparent;">
+                <img src="img/rete_oto_sport.png" alt="Image" class="img-fluid"
+                     style="display:block; margin-left: auto; margin-right: auto; border-style: solid; border-color: #dcdcdc;">
+                <figcaption class="d-flex align-items-center justify-content-center">
+                    <h2>Rete 8 Sport</h2>
+                </figcaption>
+            </figure>
+            <div class="d-flex justify-content-between">
+                <span style="display:block; margin-left: auto; margin-right: auto; font-weight: bold; color:#000">Rete 8 Sport</span>
+            </div>
+        </div>
+    </div>
+    <div class="row tm-mb-90">
+        <div class="col-12 d-flex justify-content-between align-items-center tm-paging-col">
+            <a href="pagina3.html" class="btn btn-primary tm-btn-prev mb-2">Ritorno</a>
+            <div class="tm-paging d-flex">
+                <a href="pagina3.html" class="tm-paging-link">1</a>
+                <a href="pagina2.html" class="tm-paging-link">2</a>
+                <a href="pagina3.html" class="tm-paging-link">3</a>
+                <a href="pagina4.html" class="active tm-paging-link">4</a>
+                <a href="pagina5.html" class="tm-paging-link">5</a>
+                <a href="pagina6.html" class="tm-paging-link">6</a>
+            </div>
+            <a href="pagina5.html" class="btn btn-primary tm-btn-next">Avanzare</a>
+        </div>
+    </div>
+</div>
+
+<div class="portfolio-modal modal fade" id="qvc" tabindex="-1" aria-labelledby="qvc"
+     aria-hidden="true">
+    <div class="modal-dialog modal-xl">
+        <div class="modal-header border-0">
+            <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-content">
+            <div class="col-xl-12 col-lg-5 col-md-6 col-sm-12">
+                <video id="videoPlay" class="video-js vjs-fluid vjs-default-skin" controls preload="auto"
+                       data-setup='{}'>
+                    <source src="https://qrg.akamaized.net/hls/live/2017383/lsqvc1it/master.m3u8"
+                            type="application/x-mpegURL">
+                </video>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="portfolio-modal modal fade" id="Radio105TV" tabindex="-1" aria-labelledby="Radio105TV"
+     aria-hidden="true">
+    <div class="modal-dialog modal-xl">
+        <div class="modal-header border-0">
+            <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-content">
+            <div class="col-xl-12 col-lg-5 col-md-6 col-sm-12">
+                <video id="videoPlay" class="video-js vjs-fluid vjs-default-skin" controls preload="auto"
+                       data-setup='{}'>
+                    <source src="https://live2-radio-mediaset-it.akamaized.net/content/hls_h0_clr_vos/live/channel(ec)/index.m3u8"
+                            type="application/x-mpegURL">
+                </video>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="portfolio-modal modal fade" id="rai_news" tabindex="-1" aria-labelledby="rai_news"
+     aria-hidden="true">
+    <div class="modal-dialog modal-xl">
+        <div class="modal-header border-0">
+            <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-content">
+            <div class="col-xl-12 col-lg-5 col-md-6 col-sm-12">
+                <video id="videoPlay" class="video-js vjs-fluid vjs-default-skin" controls preload="auto"
+                       data-setup='{}'>
+                    <source src="http://rainews1-live.akamaized.net/hls/live/598326/rainews1/rainews1/playlist.m3u8"
+                            type="application/x-mpegURL">
+                </video>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="portfolio-modal modal fade" id="raitre" tabindex="-1" aria-labelledby="raitre"
+     aria-hidden="true">
+    <div class="modal-dialog modal-xl">
+        <div class="modal-header border-0">
+            <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-content">
+            <div class="col-xl-12 col-lg-5 col-md-6 col-sm-12">
+                <video id="videoPlay" class="video-js vjs-fluid vjs-default-skin" controls preload="auto"
+                       data-setup='{}'>
+                    <source src="http://wzstreaming.rai.it/TVlive/liveStream/chunklist_w823540263.m3u8"
+                            type="application/x-mpegURL">
+                </video>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="portfolio-modal modal fade" id="reggiotv" tabindex="-1" aria-labelledby="reggiotv"
+     aria-hidden="true">
+    <div class="modal-dialog modal-xl">
+        <div class="modal-header border-0">
+            <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-content">
+            <div class="col-xl-12 col-lg-5 col-md-6 col-sm-12">
+                <video id="videoPlay" class="video-js vjs-fluid vjs-default-skin" controls preload="auto"
+                       data-setup='{}'>
+                    <source src="https://59d7d6f47d7fc.streamlock.net/reggiotv/reggiotv/playlist.m3u8"
+                            type="application/x-mpegURL">
+                </video>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="portfolio-modal modal fade" id="reitv" tabindex="-1" aria-labelledby="reitv"
+     aria-hidden="true">
+    <div class="modal-dialog modal-xl">
+        <div class="modal-header border-0">
+            <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-content">
+            <div class="col-xl-12 col-lg-5 col-md-6 col-sm-12">
+                <video id="videoPlay" class="video-js vjs-fluid vjs-default-skin" controls preload="auto"
+                       data-setup='{}'>
+                    <source src="https://5f22d76e220e1.streamlock.net:443/reitv/reitv/playlist.m3u8"
+                            type="application/x-mpegURL">
+                </video>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="portfolio-modal modal fade" id="rete_oto" tabindex="-1" aria-labelledby="rete_oto"
+     aria-hidden="true">
+    <div class="modal-dialog modal-xl">
+        <div class="modal-header border-0">
+            <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close" ></button>
+        </div>
+        <div class="modal-content">
+            <div class="col-xl-12 col-lg-5 col-md-6 col-sm-12">
+                <div class="video_in" >
+                    <iframe src="https://iframe.dacast.com/b/103727/c/573104"
+                            allowfullscreen="" allow="autoplay"
+                            style="border: none; position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
+                    <div id="backvideo" style="padding-top: 56.25%;"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="portfolio-modal modal fade" id="rete_oto_sport" tabindex="-1" aria-labelledby="rete_oto_sport"
+     aria-hidden="true">
+    <div class="modal-dialog modal-xl">
+        <div class="modal-header border-0">
+            <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close" ></button>
+        </div>
+        <div class="modal-content">
+            <div class="col-xl-12 col-lg-5 col-md-6 col-sm-12">
+                <div class="video_in" aria-hidden="true">
+                    <iframe src="https://iframe.dacast.com/b/103727/c/573103"
+                            allowfullscreen="" allow="autoplay"
+                            style="border: none; position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
+                    <div id="backvideo" style="padding-top: 56.25%;"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer class="tm-bg-gray pt-5 pb-3 tm-text-gray tm-footer">
+    <div class="container-fluid tm-container-small">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-12 px-5 mb-5">
+                <h3 class="mb-4 tm-footer-title" style="color:#ce2b37;">A proposito di TV Italia Player</h3>
+                <p class="tm-text-primary">Tv Italia Player è per te che ti piace guardare i contenuti in italiano
+                    Per quelli di voi che vogliono guardare contenuti gratuiti dall'Italia, ora è possibile, con l'app Tv Italia Player, guardare i canali italiani, basta scaricarli e disporre di una connessione a Internet.
+                    </br>Solo alcuni canali sono disponibili in base alla geolocalizzazione, alcuni canali italiani non possono essere guardati fuori dall'Italia.
+                    </br>Divertiti!</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-4 col-md-5 col-12 px-5 text-right tm-text-primary">
+                Progettato da <a href="http://webmatte.com.br/" style="color:#ce2b37;" rel="sponsored" target="_parent">Webmatte</a>
+            </div>
+        </div>
+    </div>
+</footer>
+<script src="js/plugins.js"></script>
+<script>
+        $(window).on("load", function() {
+            $('body').addClass('loaded');
+        });
+
+</script>
+<script>
+    var player = videojs('videoPlay');
+    player.play();
+
+</script>
+<script>
+  $('.portfolio-modal').on('hide.bs.modal', function(e) {
+    var $v = $(e.delegateTarget).find('video');
+    $v[0].pause();  // use [0] because jQuery returns a list
+  });
+
+</script>
+<!-- Bootstrap core JS-->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+<!-- Core theme JS-->
+<script src="js/scripts.js"></script>
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+<!-- * *                               SB Forms JS                               * *-->
+<!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+<script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+</body>
+</html>

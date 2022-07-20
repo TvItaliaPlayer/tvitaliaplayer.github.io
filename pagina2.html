@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tv Italia Player</title>
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="fontawesome/css/all.min.css">
+  <link rel="stylesheet" href="css/templatemo-style.css">
+  <link href="https://unpkg.com/video.js/dist/video-js.css" rel="stylesheet">
+  <script src="https://unpkg.com/video.js/dist/video.js"></script>
+  <script src="https://unpkg.com/videojs-contrib-hls/dist/videojs-contrib-hls.js"></script>
+  <script type="text/javascript">
+         document.onkeypress = function (event) {
+             event = (event || window.event);
+             return keyFunction(event);
+         }
+         document.onmousedown = function (event) {
+             event = (event || window.event);
+             return keyFunction(event);
+         }
+         document.onkeydown = function (event) {
+             event = (event || window.event);
+             return keyFunction(event);
+         }
+         //Disable right click script
+         var message="Sorry, right-click has been disabled";
+         function clickIE() {if (document.all) {(message);return false;}}
+         function clickNS(e) {if
+         (document.layers||(document.getElementById&&!document.all)) {
+         if (e.which==2||e.which==3) {(message);return false;}}}
+         if (document.layers)
+         {document.captureEvents(Event.MOUSEDOWN);document.onmousedown=clickNS;}
+         else{document.onmouseup=clickNS;document.oncontextmenu=clickIE;}
+         document.oncontextmenu=new Function("return false")
+         function keyFunction(event){
+             //"F12" key
+             if (event.keyCode == 123) {
+                 return false;
+             }
+             if (event.ctrlKey && event.shiftKey && event.keyCode == 73) {
+                 return false;
+             }
+             //"J" key
+             if (event.ctrlKey && event.shiftKey && event.keyCode == 74) {
+                 return false;
+             }
+             //"S" key
+             if (event.keyCode == 83) {
+                return false;
+             }
+             //"U" key
+             if (event.ctrlKey && event.keyCode == 85) {
+                return false;
+             }
+         <!--    //F5-->
+         <!--    if (event.keyCode == 116) {-->
+         <!--       return false;-->
+         <!--    }-->
+         }
+      </script>
+</head>
+<body>
+<!-- Page Loader -->
+<div id="loader-wrapper">
+  <div id="loader"></div>
+  <div class="loader-section section-left"></div>
+  <div class="loader-section section-right"></div>
+</div>
+<nav class="navbar navbar-expand-lg" style="background-color: #f3f3f3">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">
+      <img src="img/logosplash.png" style="max-width: 50%; max-height: 50%">
+    </a>
+    <a class="nav-link" style="color:#ce2b37;">Tv Italia Player</a>
+  </div>
+</nav>
+
+<div class="container-fluid tm-container-content tm-mt-60">
+  <div class="row tm-mb-90 tm-gallery italy">
+    <div class="col-xl-3 col-lg-4 col-md-2 col-sm-6 col-12 mb-5" data-bs-toggle="modal"
+         data-bs-target="#eTVMarche">
+      <figure class="effect-ming tm-video-item" style="background-color: transparent;">
+        <img src="img/etv_marche.png" alt="Image" class="img-fluid"
+             style="display:block; margin-left: auto; margin-right: auto; border-style: solid; border-color: #dcdcdc;">
+        <figcaption class="d-flex align-items-center justify-content-center">
+          <h2>ETV Marche</h2>
+        </figcaption>
+      </figure>
+      <div class="d-flex justify-content-between">
+        <span style="display:block; margin-left: auto; margin-right: auto; font-weight: bold; color:#000">ETV Marche</span>
+      </div>
+    </div>
+    <div class="col-xl-3 col-lg-4 col-md-2 col-sm-6 col-12 mb-5" data-bs-toggle="modal"
+         data-bs-target="#euronews">
+      <figure class="effect-ming tm-video-item" style="background-color: transparent;">
+        <img src="img/euronews.png" alt="Image" class="img-fluid"
+             style="display:block; margin-left: auto; margin-right: auto; border-style: solid; border-color: #dcdcdc;">
+        <figcaption class="d-flex align-items-center justify-content-center">
+          <h2>Euro News</h2>
+        </figcaption>
+      </figure>
+      <div class="d-flex justify-content-between">
+        <span style="display:block; margin-left: auto; margin-right: auto; font-weight: bold; color:#000">Euro News</span>
+      </div>
+    </div>
+    <div class="col-xl-3 col-lg-4 col-md-2 col-sm-6 col-12 mb-5" data-bs-toggle="modal"
+         data-bs-target="#eurotv">
+      <figure class="effect-ming tm-video-item" style="background-color: transparent;">
+        <img src="img/eurotv.png" alt="Image" class="img-fluid"
+             style="display:block; margin-left: auto; margin-right: auto; border-style: solid; border-color: #dcdcdc;">
+        <figcaption class="d-flex align-items-center justify-content-center">
+          <h2>Euro Tv</h2>
+        </figcaption>
+      </figure>
+      <div class="d-flex justify-content-between">
+        <span style="display:block; margin-left: auto; margin-right: auto; font-weight: bold; color:#000">Euro Tv</span>
+      </div>
+    </div>
+    <div class="col-xl-3 col-lg-4 col-md-2 col-sm-6 col-12 mb-5" data-bs-toggle="modal"
+         data-bs-target="#gmvinte">
+      <figure class="effect-ming tm-video-item" style="background-color: transparent;">
+        <img src="img/gm_vinte_quatro.png" alt="Image" class="img-fluid"
+             style="display:block; margin-left: auto; margin-right: auto; border-style: solid; border-color: #dcdcdc;">
+        <figcaption class="d-flex align-items-center justify-content-center">
+          <h2>GM 24</h2>
+        </figcaption>
+      </figure>
+      <div class="d-flex justify-content-between">
+        <span style="display:block; margin-left: auto; margin-right: auto; font-weight: bold; color:#000">GM 24</span>
+      </div>
+    </div>
+    <div class="col-xl-3 col-lg-4 col-md-2 col-sm-6 col-12 mb-5" data-bs-toggle="modal"
+         data-bs-target="#grp_uno">
+      <figure class="effect-ming tm-video-item" style="background-color: transparent;">
+        <img src="img/grp_uno.png" alt="Image" class="img-fluid"
+             style="display:block; margin-left: auto; margin-right: auto; border-style: solid; border-color: #dcdcdc;">
+        <figcaption class="d-flex align-items-center justify-content-center">
+          <h2>GRP 1</h2>
+        </figcaption>
+      </figure>
+      <div class="d-flex justify-content-between">
+        <span style="display:block; margin-left: auto; margin-right: auto; font-weight: bold; color:#000">GRP 1</span>
+      </div>
+    </div>
+    <div class="col-xl-3 col-lg-4 col-md-2 col-sm-6 col-12 mb-5" data-bs-toggle="modal"
+         data-bs-target="#history_lab">
+      <figure class="effect-ming tm-video-item" style="background-color: transparent;">
+        <img src="img/history_lab.png" alt="Image" class="img-fluid"
+             style="display:block; margin-left: auto; margin-right: auto; border-style: solid; border-color: #dcdcdc;">
+        <figcaption class="d-flex align-items-center justify-content-center">
+          <h2>History Lab</h2>
+        </figcaption>
+      </figure>
+      <div class="d-flex justify-content-between">
+        <span style="display:block; margin-left: auto; margin-right: auto; font-weight: bold; color:#000">History Lab</span>
+      </div>
+    </div>
+    <div class="col-xl-3 col-lg-4 col-md-2 col-sm-6 col-12 mb-5" data-bs-toggle="modal"
+         data-bs-target="#iltredici">
+      <figure class="effect-ming tm-video-item" style="background-color: transparent;">
+        <img src="img/iltredici.png" alt="Image" class="img-fluid"
+             style="display:block; margin-left: auto; margin-right: auto; border-style: solid; border-color: #dcdcdc;">
+        <figcaption class="d-flex align-items-center justify-content-center">
+          <h2>IL 13</h2>
+        </figcaption>
+      </figure>
+      <div class="d-flex justify-content-between">
+        <span style="display:block; margin-left: auto; margin-right: auto; font-weight: bold; color:#000">IL 13</span>
+      </div>
+    </div>
+    <div class="col-xl-3 col-lg-4 col-md-2 col-sm-6 col-12 mb-5" data-bs-toggle="modal"
+         data-bs-target="#italiadue">
+      <figure class="effect-ming tm-video-item" style="background-color: transparent;">
+        <img src="img/italiadue.png" alt="Image" class="img-fluid"
+             style="display:block; margin-left: auto; margin-right: auto; border-style: solid; border-color: #dcdcdc;">
+        <figcaption class="d-flex align-items-center justify-content-center">
+          <h2>Italia 2 TV</h2>
+        </figcaption>
+      </figure>
+      <div class="d-flex justify-content-between">
+        <span style="display:block; margin-left: auto; margin-right: auto; font-weight: bold; color:#000">Italia 2 TV</span>
+      </div>
+    </div>
+  </div>
+  <div class="row tm-mb-90">
+    <div class="col-12 d-flex justify-content-between align-items-center tm-paging-col">
+      <a href="index.html" class="btn btn-primary tm-btn-prev mb-2">Ritorno</a>
+      <div class="tm-paging d-flex">
+        <a href="index.html" class="tm-paging-link">1</a>
+        <a href="pagina2.html" class="active tm-paging-link">2</a>
+        <a href="pagina3.html" class="tm-paging-link">3</a>
+        <a href="pagina4.html" class="tm-paging-link">4</a>
+        <a href="pagina5.html" class="tm-paging-link">5</a>
+        <a href="pagina6.html" class="tm-paging-link">6</a>
+      </div>
+      <a href="pagina3.html" class="btn btn-primary tm-btn-next">Avanzare</a>
+    </div>
+  </div>
+</div>
+
+<div class="portfolio-modal modal fade" id="eTVMarche" tabindex="-1" aria-labelledby="eTVMarche"
+     aria-hidden="true">
+  <div class="modal-dialog modal-xl">
+    <div class="modal-header border-0">
+      <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
+    </div>
+    <div class="modal-content">
+      <div class="col-xl-12 col-lg-5 col-md-6 col-sm-12">
+        <video id="videoPlay" class="video-js vjs-fluid vjs-default-skin" controls preload="auto"
+               data-setup='{}'>
+          <source src="https://live.ipstream.it/etvmarche/etvmarche.stream/playlist.m3u8"
+                  type="application/x-mpegURL">
+        </video>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="portfolio-modal modal fade" id="euronews" tabindex="-1" aria-labelledby="euronews"
+     aria-hidden="true">
+  <div class="modal-dialog modal-xl">
+    <div class="modal-header border-0">
+      <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
+    </div>
+    <div class="modal-content">
+      <div class="col-xl-12 col-lg-5 col-md-6 col-sm-12">
+        <video id="videoPlay" class="video-js vjs-fluid vjs-default-skin" controls preload="auto"
+               data-setup='{}'>
+          <source src="https://rakuten-euronews-3-it.samsung.wurl.com/manifest/playlist.m3u8"
+                  type="application/x-mpegURL">
+        </video>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="portfolio-modal modal fade" id="eurotv" tabindex="-1" aria-labelledby="eurotv"
+     aria-hidden="true">
+  <div class="modal-dialog modal-xl">
+    <div class="modal-header border-0">
+      <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
+    </div>
+    <div class="modal-content">
+      <div class="col-xl-12 col-lg-5 col-md-6 col-sm-12">
+        <video id="videoPlay" class="video-js vjs-fluid vjs-default-skin" controls preload="auto"
+               data-setup='{}'>
+          <source src="https://5f22d76e220e1.streamlock.net/eurotv/eurotv/playlist.m3u8"
+                  type="application/x-mpegURL">
+        </video>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="portfolio-modal modal fade" id="gmvinte" tabindex="-1" aria-labelledby="gmvinte"
+     aria-hidden="true">
+  <div class="modal-dialog modal-xl">
+    <div class="modal-header border-0">
+      <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
+    </div>
+    <div class="modal-content">
+      <div class="col-xl-12 col-lg-5 col-md-6 col-sm-12">
+        <video id="videoPlayDoze" class="video-js vjs-fluid vjs-default-skin" controls preload="auto"
+               data-setup='{}'>
+          <source src="https://streaming.softwarecreation.it/GM24/GM24/playlist.m3u8"
+                  type="application/x-mpegURL">
+        </video>
+      </div>
+    </div>
+  </div>
+</div><div class="portfolio-modal modal fade" id="grp_uno" tabindex="-1" aria-labelledby="grp_uno"
+     aria-hidden="true">
+  <div class="modal-dialog modal-xl">
+    <div class="modal-header border-0">
+      <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
+    </div>
+    <div class="modal-content">
+      <div class="col-xl-12 col-lg-5 col-md-6 col-sm-12">
+        <video id="videoPlay" class="video-js vjs-fluid vjs-default-skin" controls preload="auto"
+               data-setup='{}'>
+          <source src="https://5cbd3bc28341f.streamlock.net:444/grp/live/playlist.m3u8"
+                  type="application/x-mpegURL">
+        </video>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="portfolio-modal modal fade" id="history_lab" tabindex="-1" aria-labelledby="history_lab"
+     aria-hidden="true">
+  <div class="modal-dialog modal-xl">
+    <div class="modal-header border-0">
+      <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
+    </div>
+    <div class="modal-content">
+      <div class="col-xl-12 col-lg-5 col-md-6 col-sm-12">
+        <video id="videoPlay" class="video-js vjs-fluid vjs-default-skin" controls preload="auto"
+               data-setup='{}'>
+          <source src="https://5f204aff97bee.streamlock.net/RTTRlive/livestream/playlist.m3u8"
+                  type="application/x-mpegURL">
+        </video>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="portfolio-modal modal fade" id="iltredici" tabindex="-1" aria-labelledby="iltredici"
+     aria-hidden="true">
+  <div class="modal-dialog modal-xl">
+    <div class="modal-header border-0">
+      <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
+    </div>
+    <div class="modal-content">
+      <div class="col-xl-12 col-lg-5 col-md-6 col-sm-12">
+        <video id="videoPlay" class="video-js vjs-fluid vjs-default-skin" controls preload="auto"
+               data-setup='{}'>
+          <source src="https://www.gruppotv7.com:8090/hls/azzurra.m3u8"
+                  type="application/x-mpegURL">
+        </video>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="portfolio-modal modal fade" id="italiadue" tabindex="-1" aria-labelledby="italiadue"
+     aria-hidden="true">
+  <div class="modal-dialog modal-xl">
+    <div class="modal-header border-0">
+      <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
+    </div>
+    <div class="modal-content">
+      <div class="col-xl-12 col-lg-5 col-md-6 col-sm-12">
+        <video id="videoPlay" class="video-js vjs-fluid vjs-default-skin" controls preload="auto"
+               data-setup='{}'>
+          <source src="https://59d7d6f47d7fc.streamlock.net/italia2/italia2/playlist.m3u8"
+                  type="application/x-mpegURL">
+        </video>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer class="tm-bg-gray pt-5 pb-3 tm-text-gray tm-footer">
+  <div class="container-fluid tm-container-small">
+    <div class="row">
+      <div class="col-lg-12 col-md-12 col-12 px-5 mb-5">
+        <h3 class="mb-4 tm-footer-title" style="color:#ce2b37;">A proposito di TV Italia Player</h3>
+        <p class="tm-text-primary">Tv Italia Player è per te che ti piace guardare i contenuti in italiano
+          Per quelli di voi che vogliono guardare contenuti gratuiti dall'Italia, ora è possibile, con l'app Tv Italia Player, guardare i canali italiani, basta scaricarli e disporre di una connessione a Internet.
+          </br>Solo alcuni canali sono disponibili in base alla geolocalizzazione, alcuni canali italiani non possono essere guardati fuori dall'Italia.
+          </br>Divertiti!</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-4 col-md-5 col-12 px-5 text-right tm-text-primary">
+        Progettato da <a href="http://webmatte.com.br/" style="color:#ce2b37;" rel="sponsored" target="_parent">Webmatte</a>
+      </div>
+    </div>
+  </div>
+</footer>
+<script src="js/plugins.js"></script>
+<script>
+        $(window).on("load", function() {
+            $('body').addClass('loaded');
+        });
+
+</script>
+<script>
+    var player = videojs('videoPlay');
+    player.play();
+
+</script>
+<script>
+  $('.portfolio-modal').on('hide.bs.modal', function(e) {
+    var $v = $(e.delegateTarget).find('video');
+    $v[0].pause();  // use [0] because jQuery returns a list
+  });
+
+</script>
+<!-- Bootstrap core JS-->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+<!-- Core theme JS-->
+<script src="js/scripts.js"></script>
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+<!-- * *                               SB Forms JS                               * *-->
+<!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+<script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+</body>
+</html>

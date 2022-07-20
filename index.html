@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tv Italia Player</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="fontawesome/css/all.min.css">
+    <link rel="stylesheet" href="css/templatemo-style.css">
+    <link href="https://unpkg.com/video.js/dist/video-js.css" rel="stylesheet">
+    <script src="https://unpkg.com/video.js/dist/video.js"></script>
+    <script src="https://unpkg.com/videojs-contrib-hls/dist/videojs-contrib-hls.js"></script>
+    <script type="text/javascript">
+         document.onkeypress = function (event) {
+             event = (event || window.event);
+             return keyFunction(event);
+         }
+         document.onmousedown = function (event) {
+             event = (event || window.event);
+             return keyFunction(event);
+         }
+         document.onkeydown = function (event) {
+             event = (event || window.event);
+             return keyFunction(event);
+         }
+         //Disable right click script
+         var message="Sorry, right-click has been disabled";
+         function clickIE() {if (document.all) {(message);return false;}}
+         function clickNS(e) {if
+         (document.layers||(document.getElementById&&!document.all)) {
+         if (e.which==2||e.which==3) {(message);return false;}}}
+         if (document.layers)
+         {document.captureEvents(Event.MOUSEDOWN);document.onmousedown=clickNS;}
+         else{document.onmouseup=clickNS;document.oncontextmenu=clickIE;}
+         document.oncontextmenu=new Function("return false")
+         function keyFunction(event){
+             //"F12" key
+             if (event.keyCode == 123) {
+                 return false;
+             }
+             if (event.ctrlKey && event.shiftKey && event.keyCode == 73) {
+                 return false;
+             }
+             //"J" key
+             if (event.ctrlKey && event.shiftKey && event.keyCode == 74) {
+                 return false;
+             }
+             //"S" key
+             if (event.keyCode == 83) {
+                return false;
+             }
+             //"U" key
+             if (event.ctrlKey && event.keyCode == 85) {
+                return false;
+             }
+         <!--    //F5-->
+         <!--    if (event.keyCode == 116) {-->
+         <!--       return false;-->
+         <!--    }-->
+         }
+      </script>
+</head>
+<body>
+<!-- Page Loader -->
+<div id="loader-wrapper">
+    <div id="loader"></div>
+    <div class="loader-section section-left"></div>
+    <div class="loader-section section-right"></div>
+</div>
+<nav class="navbar navbar-expand-lg" style="background-color: #f3f3f3">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+            <img src="img/logosplash.png" style="max-width: 50%; max-height: 50%">
+        </a>
+        <a class="nav-link" style="color:#ce2b37;">Tv Italia Player</a>
+    </div>
+</nav>
+
+<div class="container-fluid tm-container-content tm-mt-60">
+    <div class="row tm-mb-90 tm-gallery italy">
+        <div class="col-xl-3 col-lg-4 col-md-2 col-sm-6 col-12 mb-5" data-bs-toggle="modal" data-bs-target="#almatv"
+             style="margin-top: 60px; !important">
+            <figure class="effect-ming tm-video-item" style="background-color: transparent;">
+                <img src="img/almatv.png" alt="Image" class="img-fluid"
+                     style="display:block; margin-left: auto; margin-right: auto; border-style: solid; border-color: #dcdcdc;">
+                <figcaption class="d-flex align-items-center justify-content-center">
+                    <h2>Alma Tv</h2>
+                </figcaption>
+            </figure>
+            <div class="d-flex justify-content-between">
+                <span style="display:block; margin-left: auto; margin-right: auto; font-weight: bold; color:#000">Alma Tv</span>
+            </div>
+        </div>
+        <div class="col-xl-3 col-lg-4 col-md-2 col-sm-6 col-12 mb-5" data-bs-toggle="modal"
+             data-bs-target="#alto_adige" style="margin-top: 60px; !important">
+            <figure class="effect-ming tm-video-item" style="background-color: transparent;">
+                <img src="img/alto_adige.png" alt="Image" class="img-fluid"
+                     style="display:block; margin-left: auto; margin-right: auto; border-style: solid; border-color: #dcdcdc;">
+                <figcaption class="d-flex align-items-center justify-content-center">
+                    <h2>Alto Adige Tv</h2>
+                </figcaption>
+            </figure>
+            <div class="d-flex justify-content-between">
+                <span style="display:block; margin-left: auto; margin-right: auto; font-weight: bold; color:#000">Alto Adige Tv</span>
+            </div>
+        </div>
+        <div class="col-xl-3 col-lg-4 col-md-2 col-sm-6 col-12 mb-5" data-bs-toggle="modal"
+             data-bs-target="#canale_due" style="margin-top: 60px; !important">
+            <figure class="effect-ming tm-video-item" style="background-color: transparent;">
+                <img src="img/canale_due.png" alt="Image" class="img-fluid"
+                     style="display:block; margin-left: auto; margin-right: auto; border-style: solid; border-color: #dcdcdc;">
+                <figcaption class="d-flex align-items-center justify-content-center">
+                    <h2>Canale 2 TV</h2>
+                </figcaption>
+            </figure>
+            <div class="d-flex justify-content-between">
+                <span style="display:block; margin-left: auto; margin-right: auto; font-weight: bold; color:#000">Canale 2 TV</span>
+            </div>
+        </div>
+        <div class="col-xl-3 col-lg-4 col-md-2 col-sm-6 col-12 mb-5" data-bs-toggle="modal"
+             data-bs-target="#canale_sete" style="margin-top: 60px; !important">
+            <figure class="effect-ming tm-video-item" style="background-color: transparent;">
+                <img src="img/canale_sete.png" alt="Image" class="img-fluid"
+                     style="display:block; margin-left: auto; margin-right: auto; border-style: solid; border-color: #dcdcdc;">
+                <figcaption class="d-flex align-items-center justify-content-center">
+                    <h2>Canale 7</h2>
+                </figcaption>
+            </figure>
+            <div class="d-flex justify-content-between">
+                <span style="display:block; margin-left: auto; margin-right: auto; font-weight: bold; color:#000">Canale 7</span>
+            </div>
+        </div>
+        <div class="col-xl-3 col-lg-4 col-md-2 col-sm-6 col-12 mb-5" data-bs-toggle="modal"
+             data-bs-target="#canaledieci">
+            <figure class="effect-ming tm-video-item" style="background-color: transparent;">
+                <img src="img/canaledieci.png" alt="Image" class="img-fluid"
+                     style="display:block; margin-left: auto; margin-right: auto; border-style: solid; border-color: #dcdcdc;">
+                <figcaption class="d-flex align-items-center justify-content-center">
+                    <h2>Canale 10</h2>
+                </figcaption>
+            </figure>
+            <div class="d-flex justify-content-between">
+                <span style="display:block; margin-left: auto; margin-right: auto; font-weight: bold; color:#000">Canale 10</span>
+            </div>
+        </div>
+        <div class="col-xl-3 col-lg-4 col-md-2 col-sm-6 col-12 mb-5" data-bs-toggle="modal"
+             data-bs-target="#classcnbc">
+            <figure class="effect-ming tm-video-item" style="background-color: transparent;">
+                <img src="img/classnbc.png" alt="Image" class="img-fluid"
+                     style="display:block; margin-left: auto; margin-right: auto; border-style: solid; border-color: #dcdcdc;">
+                <figcaption class="d-flex align-items-center justify-content-center">
+                    <h2>Class CNBC</h2>
+                </figcaption>
+            </figure>
+            <div class="d-flex justify-content-between">
+                <span style="display:block; margin-left: auto; margin-right: auto; font-weight: bold; color:#000">Class CNBC</span>
+            </div>
+        </div>
+        <div class="col-xl-3 col-lg-4 col-md-2 col-sm-6 col-12 mb-5" data-bs-toggle="modal"
+             data-bs-target="#deejay_tv">
+            <figure class="effect-ming tm-video-item" style="background-color: transparent;">
+                <img src="img/deejay_tv.png" alt="Image" class="img-fluid"
+                     style="display:block; margin-left: auto; margin-right: auto; border-style: solid; border-color: #dcdcdc;">
+                <figcaption class="d-flex align-items-center justify-content-center">
+                    <h2>Deejay TV</h2>
+                </figcaption>
+            </figure>
+            <div class="d-flex justify-content-between">
+                <span style="display:block; margin-left: auto; margin-right: auto; font-weight: bold; color:#000">Deejay TV</span>
+            </div>
+        </div>
+        <div class="col-xl-3 col-lg-4 col-md-2 col-sm-6 col-12 mb-5" data-bs-toggle="modal"
+             data-bs-target="#donna_tv">
+            <figure class="effect-ming tm-video-item" style="background-color: transparent;">
+                <img src="img/donnatv.png" alt="Image" class="img-fluid"
+                     style="display:block; margin-left: auto; margin-right: auto; border-style: solid; border-color: #dcdcdc;">
+                <figcaption class="d-flex align-items-center justify-content-center">
+                    <h2>Donna TV</h2>
+                </figcaption>
+            </figure>
+            <div class="d-flex justify-content-between">
+                <span style="display:block; margin-left: auto; margin-right: auto; font-weight: bold; color:#000">Donna TV</span>
+            </div>
+        </div>
+    </div>
+    <div class="row tm-mb-90">
+        <div class="col-12 d-flex justify-content-between align-items-center tm-paging-col">
+            <a href="index.html" class="btn btn-primary tm-btn-prev mb-2 disabled">Ritorno</a>
+            <div class="tm-paging d-flex">
+                <a href="index.html" class="active tm-paging-link">1</a>
+                <a href="pagina2.html" class="tm-paging-link">2</a>
+                <a href="pagina3.html" class="tm-paging-link">3</a>
+                <a href="pagina4.html" class="tm-paging-link">4</a>
+                <a href="pagina5.html" class="tm-paging-link">5</a>
+                <a href="pagina6.html" class="tm-paging-link">6</a>
+            </div>
+            <a href="pagina2.html" class="btn btn-primary tm-btn-next">Avanzare</a>
+        </div>
+    </div>
+</div>
+
+<div class="portfolio-modal modal fade" id="almatv" tabindex="-1" aria-labelledby="almatv"
+     aria-hidden="true">
+    <div class="modal-dialog modal-xl">
+        <div class="modal-header border-0">
+            <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-content">
+            <div class="col-xl-12 col-lg-5 col-md-6 col-sm-12">
+                <video id="videoPlay" class="video-js vjs-fluid vjs-default-skin" controls preload="auto"
+                       data-setup='{}'>
+                    <source src="https://streaming.softwarecreation.it/AlmaTv/AlmaTv/playlist.m3u8"
+                            type="application/x-mpegURL">
+                </video>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="portfolio-modal modal fade" id="alto_adige" tabindex="-1" aria-labelledby="alto_adige"
+     aria-hidden="true">
+    <div class="modal-dialog modal-xl">
+        <div class="modal-header border-0">
+            <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-content">
+            <div class="col-xl-12 col-lg-5 col-md-6 col-sm-12">
+                <video id="videoPlay" class="video-js vjs-fluid vjs-default-skin" controls preload="auto"
+                       data-setup='{}'>
+                    <source src="https://5f204aff97bee.streamlock.net/AltoAdigeTV/livestream/playlist.m3u8"
+                            type="application/x-mpegURL">
+                </video>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="portfolio-modal modal fade" id="canale_due" tabindex="-1" aria-labelledby="canale_due"
+     aria-hidden="true">
+    <div class="modal-dialog modal-xl">
+        <div class="modal-header border-0">
+            <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-content">
+            <div class="col-xl-12 col-lg-5 col-md-6 col-sm-12">
+                <video id="videoPlay" class="video-js vjs-fluid vjs-default-skin" controls preload="auto"
+                       data-setup='{}'>
+                    <source src="https://59d7d6f47d7fc.streamlock.net/canale2/canale2/playlist.m3u8"
+                            type="application/x-mpegURL">
+                </video>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="portfolio-modal modal fade" id="canale_sete" tabindex="-1" aria-labelledby="canale_sete"
+     aria-hidden="true">
+    <div class="modal-dialog modal-xl">
+        <div class="modal-header border-0">
+            <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-content">
+            <div class="col-xl-12 col-lg-5 col-md-6 col-sm-12">
+                <video id="videoPlay" class="video-js vjs-fluid vjs-default-skin" controls preload="auto"
+                       data-setup='{}'>
+                    <source src="https://59d7d6f47d7fc.streamlock.net/canale7/canale7/playlist.m3u8"
+                            type="application/x-mpegURL">
+                </video>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="portfolio-modal modal fade" id="canaledieci" tabindex="-1" aria-labelledby="canaledieci"
+     aria-hidden="true">
+    <div class="modal-dialog modal-xl">
+        <div class="modal-header border-0">
+            <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-content">
+            <div class="col-xl-12 col-lg-5 col-md-6 col-sm-12">
+                <video id="videoPlay" class="video-js vjs-fluid vjs-default-skin" controls preload="auto"
+                       data-setup='{}'>
+                    <source src="https://canale10.cloud:33443/ch10live/high.stream/playlist.m3u8"
+                            type="application/x-mpegURL">
+                </video>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="portfolio-modal modal fade" id="classcnbc" tabindex="-1" aria-labelledby="classcnbc"
+     aria-hidden="true">
+    <div class="modal-dialog modal-xl">
+        <div class="modal-header border-0">
+            <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-content">
+            <div class="col-xl-12 col-lg-5 col-md-6 col-sm-12">
+                <video id="videoPlay" class="video-js vjs-fluid vjs-default-skin" controls preload="auto"
+                       data-setup='{}'>
+                    <source src="https://859c1818ed614cc5b0047439470927b0.msvdn.net/live/S76890577/tDoFkZD3T1Lw/playlist.m3u8"
+                            type="application/x-mpegURL">
+                </video>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="portfolio-modal modal fade" id="deejay_tv" tabindex="-1" aria-labelledby="deejay_tv"
+     aria-hidden="true">
+    <div class="modal-dialog modal-xl">
+        <div class="modal-header border-0">
+            <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-content">
+            <div class="col-xl-12 col-lg-5 col-md-6 col-sm-12">
+                <video id="videoPlay" class="video-js vjs-fluid vjs-default-skin" controls preload="auto"
+                       data-setup='{}'>
+                    <source src="https://4c4b867c89244861ac216426883d1ad0.msvdn.net/live/S85984808/sMO0tz9Sr2Rk/playlist.m3u8"
+                            type="application/x-mpegURL">
+                </video>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="portfolio-modal modal fade" id="donna_tv" tabindex="-1" aria-labelledby="donna_tv"
+     aria-hidden="true">
+    <div class="modal-dialog modal-xl">
+        <div class="modal-header border-0">
+            <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-content">
+            <div class="col-xl-12 col-lg-5 col-md-6 col-sm-12">
+                <video id="videoPlay" class="video-js vjs-fluid vjs-default-skin" controls preload="auto"
+                       data-setup='{}'>
+                    <source src="https://streaming.softwarecreation.it/DonnaTv/DonnaTv/playlist.m3u8"
+                            type="application/x-mpegURL">
+                </video>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer class="tm-bg-gray pt-5 pb-3 tm-text-gray tm-footer">
+    <div class="container-fluid tm-container-small">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-12 px-5 mb-5">
+                <h3 class="mb-4 tm-footer-title" style="color:#ce2b37;">A proposito di TV Italia Player</h3>
+                <p class="tm-text-primary">Tv Italia Player è per te che ti piace guardare i contenuti in italiano
+                    Per quelli di voi che vogliono guardare contenuti gratuiti dall'Italia, ora è possibile, con l'app Tv Italia Player, guardare i canali italiani, basta scaricarli e disporre di una connessione a Internet.
+                    </br>Solo alcuni canali sono disponibili in base alla geolocalizzazione, alcuni canali italiani non possono essere guardati fuori dall'Italia.
+                    </br>Divertiti!</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-4 col-md-5 col-12 px-5 text-right tm-text-primary">
+                Progettato da <a href="http://webmatte.com.br/" style="color:#ce2b37;" rel="sponsored" target="_parent">Webmatte</a>
+            </div>
+        </div>
+    </div>
+</footer>
+<script src="js/plugins.js"></script>
+<script>
+        $(window).on("load", function() {
+            $('body').addClass('loaded');
+        });
+
+</script>
+<script>
+    var player = videojs('videoPlay');
+    player.play();
+
+</script>
+<script>
+  $('.portfolio-modal').on('hide.bs.modal', function(e) {
+    var $v = $(e.delegateTarget).find('video');
+    $v[0].pause();  // use [0] because jQuery returns a list
+  });
+
+</script>
+<!-- Bootstrap core JS-->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+<!-- Core theme JS-->
+<script src="js/scripts.js"></script>
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+<!-- * *                               SB Forms JS                               * *-->
+<!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+<script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+</body>
+</html>
